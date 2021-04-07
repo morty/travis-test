@@ -1,1 +1,13 @@
 language: python
+
+jobs:
+  include:
+    - stage: echo
+      script:
+        - echo $FOO
+        - echo $BAR
+
+env:
+  jobs:
+    - FOO=1 BAR=1
+    - FOO=2 BAR=2
