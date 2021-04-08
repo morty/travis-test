@@ -7,7 +7,12 @@ jobs:
       env: FOO=one
       script: &foo
         - echo $FOO
+        - echo $BAR
     - stage: duplicate
       name: Two
       env: FOO=two
       script: *foo
+
+env:
+  global:
+    - BAR=baz
