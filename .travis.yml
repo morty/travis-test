@@ -2,12 +2,12 @@ language: python
 
 jobs:
   include:
-    - stage: echo
-      script:
+    - stage: duplicate
+      name: One
+      env: FOO=one
+      script: &foo
         - echo $FOO
-        - echo $BAR
-
-env:
-  jobs:
-    - FOO=1 BAR=1
-    - FOO=2 BAR=2
+    - stage: duplicate
+      name: Two
+      env: FOO=two
+      script: *foo
