@@ -10,7 +10,9 @@ jobs:
         - echo $BAR
     - stage: duplicate
       name: Two
-      env: FOO=two
+      env: 
+        - FOO=two
+        - BAR=quux
       script: *foo
 
 env:
